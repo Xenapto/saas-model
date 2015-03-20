@@ -1,0 +1,32 @@
+AllCops:
+  Exclude:
+    - db/**/*
+    - config/initializers/*
+    - bin/*
+  RunRailsCops: false
+
+# These rules are OK
+InlineComment:
+  Description: 'Avoid inline comments.'
+  Enabled: false
+
+LineLength:
+  Max: 150
+  Enabled: true
+
+StringLiterals:
+  EnforcedStyle: single_quotes
+  Enabled: true
+
+ClassAndModuleChildren:
+  Description: 'Checks style of children classes and modules.'
+  Enabled: false
+
+Documentation:
+  # don't require classes to be documented
+  Enabled: false
+
+DotPosition:
+  Description: 'Checks the position of the dot in multi-line method calls.'
+  EnforcedStyle: leading
+  Enabled: true

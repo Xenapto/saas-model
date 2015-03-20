@@ -4,8 +4,15 @@
 # or operating system, you probably want to add a global ignore instead:
 #   git config --global core.excludesfile '~/.gitignore_global'
 
+/config/database.yml
+/config/resque.yml
+.env
+.foreman
+
 # Ignore bundler config.
 /.bundle
+/vendor/bundle/
+/vendor/ruby/
 
 # Ignore the default SQLite database.
 /db/*.sqlite3
@@ -15,3 +22,8 @@
 /log/*
 !/log/.keep
 /tmp
+
+.rspec
+.sass-cache
+/coverage.data
+/coverage/
