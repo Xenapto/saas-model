@@ -26,4 +26,3 @@ group :development, :test do
   gem 'spring'
   gem 'rubocop'
 end
-
