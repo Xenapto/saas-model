@@ -4,7 +4,7 @@ ruby '2.2.0'
 
 gem 'rails', '~> 4.2.0'
 gem 'pg'
-# gem 'unicorn', require: false
+gem 'unicorn-rails'
 # gem 'foreman', require: false
 # gem 'sass-rails', '~> 5.0', require: false
 # gem 'uglifier', '>= 1.3.0', require: false
@@ -19,6 +19,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+
+gem 'axlsx_rails'
 
 group :development, :test do
   gem 'byebug'

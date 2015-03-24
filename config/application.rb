@@ -22,5 +22,8 @@ module SaasModel
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    # Allow hosts on local network to use web console
+    config.web_console.whitelisted_ips = '192.168.0.0/16'
   end
 end
