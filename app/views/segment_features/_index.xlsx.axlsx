@@ -1,0 +1,12 @@
+segment_name = ''
+sheet = nil
+
+@segment_features.try(:each) do |f|
+  unless segment_name == f.segment_name
+    segment_name = f.segment_name
+    sheet = wb.add_worksheet(name: "Features for #{segment_name.downcase}")
+    sheet.add_row f.attributes.keys
+  end
+
+  sheet.add_row f.attributes.values
+end

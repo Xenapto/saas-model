@@ -1,5 +1,7 @@
-wb.add_worksheet(name: "Market segments") do |sheet|
+wb.add_worksheet(name: 'Market segments') do |sheet|
+  sheet.add_row @segments.first.attributes.keys if @segments
+
   @segments.try(:each) do |f|
-    sheet.add_row [f.name, f.effort]
+    sheet.add_row f.attributes.values
   end
 end

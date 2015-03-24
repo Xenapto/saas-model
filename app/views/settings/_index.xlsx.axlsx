@@ -1,0 +1,7 @@
+wb.add_worksheet(name: 'Settings') do |sheet|
+  sheet.add_row @settings.first.attributes.keys if @settings
+
+  @settings.try(:each) do |f|
+    sheet.add_row f.attributes.map { |k, v| k == 'value' ? YAML.load(v) : v }
+  end
+end
