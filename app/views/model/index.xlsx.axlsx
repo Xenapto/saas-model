@@ -1,0 +1,4 @@
+wb = xlsx_package.workbook
+
+render :partial => 'features/index', :locals => {:wb => wb}
+render :partial => 'segments/index', :locals => {:wb => wb}

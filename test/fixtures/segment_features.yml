@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  segment_id: 
+  feature_id: 
+  obtainable_market: 1.5
+  obtainable_revenue: 1.5
+
+two:
+  segment_id: 
+  feature_id: 
+  obtainable_market: 1.5
+  obtainable_revenue: 1.5

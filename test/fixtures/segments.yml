@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  addressable_market: 1
+  market_expansion: 1.5
+  awareness_coefficient: 1.5
+  adoption_coefficient: 1.5
+  adoption_peak: 1.5
+  conversion_uc: 1.5
+  conversion_ua: 1.5
+  conversion_ca: 1.5
+  stickiness: 1.5
+  available_revenue: 1
+
+two:
+  name: MyString
+  addressable_market: 1
+  market_expansion: 1.5
+  awareness_coefficient: 1.5
+  adoption_coefficient: 1.5
+  adoption_peak: 1.5
+  conversion_uc: 1.5
+  conversion_ua: 1.5
+  conversion_ca: 1.5
+  stickiness: 1.5
+  available_revenue: 1

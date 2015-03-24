@@ -1,0 +1,5 @@
+wb.add_worksheet(name: "Market segments") do |sheet|
+  @segments.try(:each) do |f|
+    sheet.add_row [f.name, f.effort]
+  end
+end

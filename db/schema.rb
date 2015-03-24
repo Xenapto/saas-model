@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150320145538) do
+ActiveRecord::Schema.define(version: 20150324160711) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,4 +29,43 @@ ActiveRecord::Schema.define(version: 20150320145538) do
 
   add_index "features", ["name"], name: "index_features_on_name", unique: true, using: :btree
 
+  create_table "segment_features", force: :cascade do |t|
+    t.integer  "segment_id"
+    t.integer  "feature_id"
+    t.float    "obtainable_market"
+    t.float    "obtainable_revenue"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "segment_name",       null: false
+    t.string   "feature_name",       null: false
+  end
+
+  add_index "segment_features", ["feature_id"], name: "index_segment_features_on_feature_id", using: :btree
+  add_index "segment_features", ["segment_id"], name: "index_segment_features_on_segment_id", using: :btree
+
+  create_table "segments", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "addressable_market"
+    t.float    "market_expansion"
+    t.float    "awareness_coefficient"
+    t.float    "adoption_coefficient"
+    t.float    "adoption_peak"
+    t.float    "conversion_uc"
+    t.float    "conversion_ua"
+    t.float    "conversion_ca"
+    t.float    "stickiness"
+    t.integer  "available_revenue"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
+
+  create_table "settings", force: :cascade do |t|
+    t.string   "key"
+    t.string   "value"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "segment_features", "features"
+  add_foreign_key "segment_features", "segments"
 end

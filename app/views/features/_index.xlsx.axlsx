@@ -1,0 +1,5 @@
+wb.add_worksheet(name: "Features") do |sheet|
+  @features.try(:each) do |f|
+    sheet.add_row [f.name, f.effort]
+  end
+end
