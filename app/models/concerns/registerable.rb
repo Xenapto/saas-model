@@ -33,7 +33,7 @@ module Registerable
     # end
     # </code>
     def unique_values(attributes)
-      attributes.slice *unique_attributes
+      attributes.slice(*unique_attributes)
     end
   end
 end

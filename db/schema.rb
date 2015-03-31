@@ -11,10 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150324160711) do
+ActiveRecord::Schema.define(version: 20150331150740) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "actuals", force: :cascade do |t|
+    t.date     "period"
+    t.decimal  "costs",              precision: 16, scale: 2
+    t.decimal  "revenue",            precision: 16, scale: 2
+    t.decimal  "capital_introduced", precision: 16, scale: 2
+    t.string   "capital_note"
+    t.datetime "created_at",                                  null: false
+    t.datetime "updated_at",                                  null: false
+  end
 
   create_table "features", force: :cascade do |t|
     t.string   "name",                  null: false
@@ -33,11 +43,11 @@ ActiveRecord::Schema.define(version: 20150324160711) do
     t.integer  "segment_id"
     t.integer  "feature_id"
     t.float    "obtainable_market"
-    t.float    "obtainable_revenue"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
-    t.string   "segment_name",       null: false
-    t.string   "feature_name",       null: false
+    t.decimal  "obtainable_revenue", precision: 16, scale: 2
+    t.datetime "created_at",                                  null: false
+    t.datetime "updated_at",                                  null: false
+    t.string   "segment_name",                                null: false
+    t.string   "feature_name",                                null: false
   end
 
   add_index "segment_features", ["feature_id"], name: "index_segment_features_on_feature_id", using: :btree
@@ -54,9 +64,9 @@ ActiveRecord::Schema.define(version: 20150324160711) do
     t.float    "conversion_ua"
     t.float    "conversion_ca"
     t.float    "stickiness"
-    t.integer  "available_revenue"
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
+    t.decimal  "available_revenue",     precision: 16, scale: 2
+    t.datetime "created_at",                                     null: false
+    t.datetime "updated_at",                                     null: false
   end
 
   create_table "settings", force: :cascade do |t|

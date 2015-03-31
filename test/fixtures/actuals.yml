@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  period: 2015-03-31
+  costs: 9.99
+  revenue: 9.99
+  capital_introduced: 9.99
+  capital_note: MyString
+
+two:
+  period: 2015-03-31
+  costs: 9.99
+  revenue: 9.99
+  capital_introduced: 9.99
+  capital_note: MyString
