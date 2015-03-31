@@ -3,7 +3,6 @@ AllCops:
     - db/**/*
     - config/initializers/*
     - bin/*
-  RunRailsCops: false
 
 # These rules are OK
 InlineComment:
