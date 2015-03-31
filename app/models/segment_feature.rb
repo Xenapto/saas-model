@@ -12,7 +12,7 @@ class SegmentFeature < ActiveRecord::Base
     end
 
     def generate
-      Segment.try(:each) do |s|
+      Segment.all.try(:each) do |s|
         Feature.all.try(:each) do |f|
           register(
             segment_id: s.id,
